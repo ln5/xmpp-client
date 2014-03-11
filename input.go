@@ -35,6 +35,9 @@ var uiCommands = []uiCommand{
 	{"otr-info", otrInfoCommand{}, "Print OTR information such as OTR fingerprint"},
 	{"version", versionCommand{}, "Ask a Jabber client for its version"},
 	{"statusupdates", toggleStatusUpdatesCommand{}, "Toggle if status updates are displayed"},
+	{"away", awayCommand{}, ""},
+	{"online", onlineCommand{}, ""},
+	{"dnd", dndCommand{}, ""},
 }
 
 type addCommand struct {
@@ -45,6 +48,10 @@ type authCommand struct {
 	User   string "uid"
 	Secret string
 }
+
+type awayCommand struct { }
+type onlineCommand struct { }
+type dndCommand struct { }
 
 type authQACommand struct {
 	User     string "uid"

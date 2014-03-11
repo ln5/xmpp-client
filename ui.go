@@ -424,6 +424,12 @@ MainLoop:
 					}
 				}
 				break MainLoop
+                        case awayCommand:
+                                s.conn.SignalPresence("away")
+                        case onlineCommand:
+                                s.conn.SignalPresence("online")
+                        case dndCommand:
+                                s.conn.SignalPresence("dnd")
 			case versionCommand:
 				replyChan, cookie, err := s.conn.SendIQ(cmd.User, "get", xmpp.VersionQuery{})
 				if err != nil {
